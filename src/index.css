@@ -1,0 +1,78 @@
+body {
+  font-family: sans-serif;
+  padding-inline: max(calc(50vw - 600px), 1rem);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-brand: darkgreen;
+}
+
+.fgroup,
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fgroup:not(.inline) {
+  gap: 8px;
+}
+
+.fgroup.inline {
+  flex-direction: row;
+}
+
+.fgroup.infield {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+/* *********************** */
+
+.fgroup label {
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fgroup:not(.infield) > label {
+  font-weight: 600;
+  color: #141e46;
+}
+
+.fgroup :is(input, textarea, select) {
+  accent-color: var(--clr-brand);
+  background: color-mix(in srgb, var(--clr-brand) 5%, #fff);
+  padding: 0.5rem;
+  border: 1px solid var(--clr-brand);
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.fgroup p {
+  color: darkred;
+  font-size: 12px;
+}
+
+/* *********************** */
+
+.fgroup :is(input, textarea, select):focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--clr-brand) 70%, #fff);
+}
+
+form button[type] {
+  background: color-mix(in srgb, var(--clr-brand) 50%, #fff);
+  font-weight: 700;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid var(--clr-brand);
+  cursor: pointer;
+}
